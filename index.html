@@ -9,38 +9,40 @@
             background-color: #0d1117;
             color: #00ff00;
             font-family: 'Courier New', Courier, monospace;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
             margin: 0;
-            padding: 20px;
+            padding: 5vw; /* Padding dinámico para separar de los bordes del celular */
             box-sizing: border-box;
+            min-height: 100vh;
+            display: grid;
+            place-items: center; /* Grid es más estable que flex en WebViews */
         }
         .terminal {
             background-color: #161b22;
             border: 1px solid #30363d;
             border-radius: 8px;
-            padding: 20px;
+            padding: 15px;
             width: 100%;
             max-width: 600px;
+            box-sizing: border-box; /* Fuerza al contenedor a no desbordar la pantalla */
             box-shadow: 0 4px 15px rgba(0,0,0,0.5);
         }
         .header {
             border-bottom: 1px solid #30363d;
             padding-bottom: 10px;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             color: #8b949e;
-            font-size: 0.9em;
+            font-size: 0.85em;
+            word-break: break-all;
         }
         #output {
-            line-height: 1.6;
+            line-height: 1.5;
             white-space: pre-wrap;
-            font-size: 1.1em;
+            word-wrap: break-word; /* Evita columnas estrechas obligando al texto a fluir */
+            font-size: 0.95em; /* Fuente ligeramente más pequeña para móvil */
         }
         .cursor {
             display: inline-block;
-            width: 10px;
+            width: 8px;
             height: 1.2em;
             background-color: #00ff00;
             vertical-align: text-bottom;
@@ -59,7 +61,7 @@
     </div>
 
     <script>
-        // Aquí puedes editar tu mensaje
+        // Aquí puedes editar tu mensaje si lo necesitas
         const lines = [
             "> Iniciando protocolo de cumpleaños...",
             "> Escaneando objetivo...",
